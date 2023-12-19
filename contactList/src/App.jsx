@@ -16,18 +16,17 @@ function App() {
   const [count, setCount] = useState(0)
   const [contacts, setContacts] = useState(dummyContacts);
   const [selectedContactId, setSelectedContactId] = useState(null);
-  //console.log("Contacts: ", contacts)
  
 
   return (
     <>
-     {selectedContactId ? (
-        <div>Selected Contact View</div>
+      {selectedContactId ? (
+        <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId} />
       ) : (
         <ContactList setSelectedContactId={setSelectedContactId} />
       )}
     </>
-  )
+  );
 }
 
 export default App
